@@ -1,0 +1,13 @@
+常用的tushare数据采集函数还有：
+
+
+实时行情数据： get_today_all()
+历史分笔数据： get_tick_data()
+实时分笔数据： get_realtime_quotes()
+当日历史分笔数据：get_today_ticks()
+大盘指数行情列表：get_index()
+大单交易数据：   get_sina_dd()
+
+
+
+

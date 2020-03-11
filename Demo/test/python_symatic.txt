@@ -1,0 +1,67 @@
+1.变量定义的规则：
+
+变量名只能是 字母、数字或下划线的任意组合
+变量名的第一个字符不能是数字
+以下关键字不能声明为变量名
+['and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'exec', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'print', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+
+2.python 基础语法学习
+http://www.runoob.com/python3
+
+
+3.变量作用域
+Python 中，程序的变量并不是在哪个位置都可以访问的，访问权限决定于这个变量是在哪里赋值的。
+
+变量的作用域决定了在哪一部分程序可以访问哪个特定的变量名称。Python的作用域一共有4种，分别是：
+
+L （Local） 局部作用域
+E （Enclosing） 闭包函数外的函数中
+G （Global） 全局作用域
+B （Built-in） 内建作用域
+以 L –> E –> G –>B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内建中找。
+
+x = int(2.9)  # 内建作用域
+
+g_count = 0  # 全局作用域
+def outer():
+    o_count = 1  # 闭包函数外的函数中
+    def inner():
+        i_count = 2  # 局部作用域
+Python 中只有模块（module），类（class）以及函数（def、lambda）才会引入新的作用域，其它的代码块（如 if/elif/else/、try/except、for/while等）
+是不会引入新的作用域的，也就是说这些语句内定义的变量，外部也可以访问，如下代码：
+
+
+>>> if True:
+...  msg = 'I am from Runoob'
+...
+>>> msg
+'I am from Runoob'
+>>>
+实例中 msg 变量定义在 if 语句块中，但外部还是可以访问的。
+
+如果将 msg 定义在函数中，则它就是局部变量，外部不能访问：
+
+>>> def test():
+...     msg_inner = 'I am from Runoob'
+...
+>>> msg_inner
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'msg_inner' is not defined
+>>>
+从报错的信息上看，说明了 msg_inner 未定义，无法使用，因为它是局部变量，只有在函数内可以使用。
+
+
+4.基本数据类型
+数字 Number
+字符 String
+元祖 Tuple
+列表 List
+字典 Dictionary
+集合 Set
+
+基本语法见：
+http://www.runoob.com/python3/python3-data-type.html
+

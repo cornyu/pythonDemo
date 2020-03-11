@@ -1,0 +1,9 @@
+python多任务
+
+Python GIL(Global Interpreter Lock)全局解释器锁。
+Python代码的执行由Python解释器进行控制，根据解释器实现方式不同分为CPython,PyPy,Jython等，其中
+CPython为最广泛使用的Python解释器。
+理论上CPU是多核时支持多个线程同时执行，但在Python设计之初考虑到Python解释器的主循环中执行Python代码，于是
+CPython中设计了GIL机制来管理解释器的访问；Python线程的执行必须先竞争到GIL权限才能执行。
+因此，无论是单核还是多核CPU,任意给定时刻只有一个线程会被Python解释器执行，这也是为什么在多核CPU上，Python的多线程
+有时效率并不高的根本原因；
