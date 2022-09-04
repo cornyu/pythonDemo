@@ -5,6 +5,7 @@
 这是多行注释，用三个单引号
 '''
 
+
 while True:
        try:
               inputValue = input('输入两个数字，以空格隔开')
@@ -13,3 +14,5 @@ while True:
        except:
               break
               exit(0)
+
+
